@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
   # Выполняем сценарий для установки необходимых пакетов
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y python3 python3-pip
-    pip3 install psycopg2 django
+    sudo apt-get install -y python3 python3-pip libpq-dev
+    pip3 install psycopg2-binary django
   SHELL
 
   # Копируем пустой файл на виртуальную машину
